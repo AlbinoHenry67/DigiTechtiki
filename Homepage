@@ -1,1 +1,578 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volleyball Academy</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b1020;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #11182d;
+            border-bottom: 1px solid #283454;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            color: #5ee7ff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #5ee7ff;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background:
+                radial-gradient(circle at center, #18284c, #0b1020 70%);
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 90px);
+            margin-bottom: 10px;
+            color: #5ee7ff;
+        }
+
+        .hero p {
+            max-width: 700px;
+            font-size: 20px;
+            color: #cbd5e1;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 28px;
+            background: #5ee7ff;
+            color: #07101c;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 80px 8%;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #5ee7ff;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #9ca9c2;
+            margin-bottom: 45px;
+        }
+
+        /* CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #131c34;
+            border: 1px solid #283454;
+            border-radius: 14px;
+            padding: 28px;
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            border-color: #5ee7ff;
+        }
+
+        .card h3 {
+            color: #5ee7ff;
+            margin-bottom: 12px;
+            font-size: 23px;
+        }
+
+        .card p {
+            color: #c7d0df;
+        }
+
+        .card ul {
+            margin-left: 20px;
+            color: #c7d0df;
+        }
+
+        /* ROTATION */
+        .rotation-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .court {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            height: 420px;
+            margin: 40px auto;
+            border: 5px solid white;
+            background: #c9783b;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 5px;
+        }
+
+        .zone {
+            border: 2px solid rgba(255,255,255,0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            font-weight: bold;
+            background: rgba(0,0,0,0.08);
+        }
+
+        .front {
+            background: rgba(255,255,255,0.08);
+        }
+
+        .rotation-note {
+            text-align: center;
+            max-width: 750px;
+            margin: auto;
+            color: #c7d0df;
+        }
+
+        /* TIPS */
+        .tip {
+            background: #182642;
+            border-left: 5px solid #5ee7ff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #070b16;
+            color: #77849c;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .court {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <h2>🏐 VOLLEYBALL ACADEMY</h2>
+
+    <ul>
+        <li><a href="#rotation">Rotation</a></li>
+        <li><a href="#spiking">Spiking</a></li>
+        <li><a href="#serving">Serving</a></li>
+        <li><a href="#passing">Passing</a></li>
+        <li><a href="#blocking">Blocking</a></li>
+    </ul>
+</nav>
+
+
+<!-- HERO -->
+<header class="hero">
+    <h1>VOLLEYBALL</h1>
+
+    <p>
+        Learn the fundamentals of volleyball, understand rotations,
+        improve your spike, develop a stronger serve and become a
+        better all-round player.
+    </p>
+
+    <a class="button" href="#rotation">START LEARNING</a>
+</header>
+
+
+<!-- ROTATION -->
+<section id="rotation">
+
+    <h2>🔄 Rotation</h2>
+
+    <p class="subtitle">
+        Understanding where players stand and how they rotate.
+    </p>
+
+    <div class="rotation-container">
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>What is a rotation?</h3>
+                <p>
+                    When your team wins the right to serve from the
+                    other team, everyone rotates one position clockwise.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Front Row</h3>
+                <p>
+                    Positions 4, 3 and 2 are the front row.
+                    These players can attack above the net and block.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Back Row</h3>
+                <p>
+                    Positions 5, 6 and 1 are the back row.
+                    Back-row players cannot block or attack the ball
+                    above the height of the net from in front of the
+                    attack line.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="court">
+
+            <div class="zone front">
+                4<br>LEFT FRONT
+            </div>
+
+            <div class="zone front">
+                3<br>MIDDLE FRONT
+            </div>
+
+            <div class="zone front">
+                2<br>RIGHT FRONT
+            </div>
+
+            <div class="zone">
+                5<br>LEFT BACK
+            </div>
+
+            <div class="zone">
+                6<br>MIDDLE BACK
+            </div>
+
+            <div class="zone">
+                1<br>RIGHT BACK
+            </div>
+
+        </div>
+
+        <p class="rotation-note">
+            <strong>Rotation order:</strong><br>
+            1 → 6 → 5 → 4 → 3 → 2 → 1
+        </p>
+
+        <div class="tip">
+            💡 <strong>Tip:</strong>
+            Players only need to be in the correct rotational order
+            when the serve is contacted. After the serve, players can
+            move into their normal positions.
+        </div>
+
+    </div>
+</section>
+
+
+<!-- SPIKING -->
+<section id="spiking">
+
+    <h2>🔥 Spiking</h2>
+
+    <p class="subtitle">
+        How to approach, jump and hit the ball with power.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>1. The Approach</h3>
+
+            <ul>
+                <li>Start behind the ball.</li>
+                <li>Use a controlled approach.</li>
+                <li>For a right-handed hitter, a common approach is left-right-left.</li>
+                <li>Build speed toward the net.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>2. Jump</h3>
+
+            <ul>
+                <li>Plant both feet.</li>
+                <li>Swing your arms backwards.</li>
+                <li>Explode upwards.</li>
+                <li>Keep your body balanced.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>3. Arm Swing</h3>
+
+            <ul>
+                <li>Pull your hitting arm back.</li>
+                <li>Keep your elbow high.</li>
+                <li>Contact the top half of the ball.</li>
+                <li>Snap your wrist over the ball.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>4. Landing</h3>
+
+            <ul>
+                <li>Land on both feet.</li>
+                <li>Bend your knees.</li>
+                <li>Keep your chest controlled.</li>
+                <li>Avoid landing underneath the net.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="tip">
+        💡 <strong>Power isn't everything.</strong>
+        A smart hitter can score by using angles, tips, roll shots
+        and hitting around the block instead of always trying to
+        hit as hard as possible.
+    </div>
+
+</section>
+
+
+<!-- SERVING -->
+<section id="serving">
+
+    <h2>🎯 Serving</h2>
+
+    <p class="subtitle">
+        Start the rally with a consistent and difficult serve.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Float Serve</h3>
+
+            <p>
+                A float serve has little spin, causing the ball to
+                move unpredictably through the air.
+            </p>
+
+            <br>
+
+            <ul>
+                <li>High toss control</li>
+                <li>Firm hand contact</li>
+                <li>Little or no spin</li>
+                <li>Follow through toward your target</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Jump Serve</h3>
+
+            <p>
+                A jump serve combines a toss, approach and powerful
+                contact to create a faster and more aggressive serve.
+            </p>
+
+            <br>
+
+            <ul>
+                <li>Consistent toss</li>
+                <li>Controlled approach</li>
+                <li>Strong jump</li>
+                <li>Contact at maximum reach</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Serving Strategy</h3>
+
+            <ul>
+                <li>Target weaker passers.</li>
+                <li>Serve deep when possible.</li>
+                <li>Change locations.</li>
+                <li>Don't sacrifice consistency for power.</li>
+            </ul>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PASSING -->
+<section id="passing">
+
+    <h2>🛡️ Passing</h2>
+
+    <p class="subtitle">
+        A good pass gives your setter options.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Platform</h3>
+
+            <p>
+                Put your arms together to create a flat platform.
+                Keep your shoulders facing your target.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Move Your Feet</h3>
+
+            <p>
+                Don't reach for the ball if you can move your body
+                underneath it. Get your platform behind the ball.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Control</h3>
+
+            <p>
+                Use your legs and body position to control the ball.
+                Avoid wildly swinging your arms.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- BLOCKING -->
+<section id="blocking">
+
+    <h2>🧱 Blocking</h2>
+
+    <p class="subtitle">
+        Stop attacks and control where the hitter can attack.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Read the Setter</h3>
+            <p>
+                Watch the setter and identify where the ball is going
+                before committing to your block.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Move Quickly</h3>
+            <p>
+                Use quick lateral steps to get your body in front of
+                the attacker.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Hands Over</h3>
+            <p>
+                Press your hands over the net rather than simply
+                jumping straight up.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Close the Block</h3>
+            <p>
+                Work with your teammate to remove attacking angles
+                and force the hitter toward your defenders.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+    <p>🏐 Volleyball Academy</p>
+    <p>Learn • Train • Improve</p>
+</footer>
+
+
+</body>
+</html>
+```
 
