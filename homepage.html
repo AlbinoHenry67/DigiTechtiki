@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -152,17 +151,24 @@
             margin: auto;
         }
 
+        /* 3 WIDE VOLLEYBALL COURT */
         .court {
             position: relative;
             width: 100%;
-            max-width: 650px;
+            max-width: 900px;
             height: 420px;
             margin: 40px auto;
             border: 5px solid white;
             background: #c9783b;
+
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
+
+            /* 3 positions across */
+            grid-template-columns: repeat(3, 1fr);
+
+            /* Front row + back row */
+            grid-template-rows: repeat(2, 1fr);
+
             gap: 5px;
         }
 
@@ -171,9 +177,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            text-align: center;
             font-size: 22px;
             font-weight: bold;
             background: rgba(0,0,0,0.08);
+        }
+
+        .zone strong {
+            font-size: 30px;
         }
 
         .front {
@@ -223,6 +234,14 @@
 
             .court {
                 height: 300px;
+            }
+
+            .zone {
+                font-size: 14px;
+            }
+
+            .zone strong {
+                font-size: 20px;
             }
         }
     </style>
@@ -300,33 +319,55 @@
         </div>
 
 
+        <!-- 3 × 2 COURT -->
         <div class="court">
 
+            <!-- FRONT ROW -->
             <div class="zone front">
-                4<br>LEFT FRONT
+                <span>
+                    <strong>4</strong><br>
+                    LEFT FRONT
+                </span>
             </div>
 
             <div class="zone front">
-                3<br>MIDDLE FRONT
+                <span>
+                    <strong>3</strong><br>
+                    MIDDLE FRONT
+                </span>
             </div>
 
             <div class="zone front">
-                2<br>RIGHT FRONT
+                <span>
+                    <strong>2</strong><br>
+                    RIGHT FRONT
+                </span>
+            </div>
+
+            <!-- BACK ROW -->
+            <div class="zone">
+                <span>
+                    <strong>5</strong><br>
+                    LEFT BACK
+                </span>
             </div>
 
             <div class="zone">
-                5<br>LEFT BACK
+                <span>
+                    <strong>6</strong><br>
+                    MIDDLE BACK
+                </span>
             </div>
 
             <div class="zone">
-                6<br>MIDDLE BACK
-            </div>
-
-            <div class="zone">
-                1<br>RIGHT BACK
+                <span>
+                    <strong>1</strong><br>
+                    RIGHT BACK
+                </span>
             </div>
 
         </div>
+
 
         <p class="rotation-note">
             <strong>Rotation order:</strong><br>
@@ -530,6 +571,7 @@
 
         <div class="card">
             <h3>Read the Setter</h3>
+
             <p>
                 Watch the setter and identify where the ball is going
                 before committing to your block.
@@ -538,6 +580,7 @@
 
         <div class="card">
             <h3>Move Quickly</h3>
+
             <p>
                 Use quick lateral steps to get your body in front of
                 the attacker.
@@ -546,6 +589,7 @@
 
         <div class="card">
             <h3>Hands Over</h3>
+
             <p>
                 Press your hands over the net rather than simply
                 jumping straight up.
@@ -554,6 +598,7 @@
 
         <div class="card">
             <h3>Close the Block</h3>
+
             <p>
                 Work with your teammate to remove attacking angles
                 and force the hitter toward your defenders.
@@ -574,5 +619,3 @@
 
 </body>
 </html>
-```
-
