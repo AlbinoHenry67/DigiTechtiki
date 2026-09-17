@@ -215,6 +215,287 @@
             color: #77849c;
         }
 
+
+        /* ============================= */
+        /* 5-1 ROTATION TRAINER */
+        /* ============================= */
+
+        .five-one {
+            margin-top: 70px;
+        }
+
+        .five-one h3 {
+            text-align: center;
+            color: #5ee7ff;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .five-one-intro {
+            text-align: center;
+            color: #c7d0df;
+            max-width: 780px;
+            margin: 0 auto 30px;
+        }
+
+        .rotation-buttons,
+        .phase-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .rotation-buttons {
+            margin-bottom: 14px;
+        }
+
+        .phase-buttons {
+            margin-bottom: 30px;
+        }
+
+        .rotation-buttons button,
+        .phase-buttons button {
+            border: 1px solid #283454;
+            background: #131c34;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .rotation-buttons button:hover,
+        .phase-buttons button:hover {
+            border-color: #5ee7ff;
+            color: #5ee7ff;
+            transform: translateY(-2px);
+        }
+
+        .rotation-buttons button.active,
+        .phase-buttons button.active {
+            background: #5ee7ff;
+            color: #07101c;
+            border-color: #5ee7ff;
+        }
+
+        .trainer-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 300px;
+            gap: 25px;
+            align-items: start;
+        }
+
+        .trainer-court-wrap {
+            width: 100%;
+        }
+
+        .trainer-court {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            height: 500px;
+            margin: 0 auto;
+            border: 5px solid white;
+            border-radius: 4px;
+            background:
+                linear-gradient(to bottom,
+                    transparent 49.2%,
+                    rgba(255,255,255,0.95) 49.2%,
+                    rgba(255,255,255,0.95) 50.8%,
+                    transparent 50.8%),
+                #c9783b;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.28);
+        }
+
+        /* attack line */
+        .trainer-court::before,
+        .trainer-court::after {
+            content: "";
+            position: absolute;
+            left: 16.66%;
+            right: 16.66%;
+            height: 4px;
+            background: rgba(255,255,255,0.9);
+            z-index: 1;
+        }
+
+        .trainer-court::before {
+            top: 30%;
+        }
+
+        .trainer-court::after {
+            top: 70%;
+        }
+
+        .trainer-net {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 9px;
+            background: white;
+            z-index: 3;
+            transform: translateY(-50%);
+            box-shadow: 0 0 0 2px rgba(0,0,0,0.12);
+        }
+
+        .court-label {
+            position: absolute;
+            z-index: 2;
+            color: rgba(255,255,255,0.75);
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            pointer-events: none;
+        }
+
+        .court-label.front-label {
+            top: 3%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .court-label.back-label {
+            bottom: 3%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .player {
+            position: absolute;
+            left: var(--x);
+            top: var(--y);
+            width: 28%;
+            max-width: 170px;
+            min-width: 105px;
+            height: 92px;
+            z-index: 10;
+            border: 2px solid rgba(255,255,255,0.72);
+            border-radius: 12px;
+            background: rgba(7,16,28,0.82);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+            transform: translate(-50%, -50%);
+            transition:
+                left 0.65s ease,
+                top 0.65s ease,
+                transform 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
+            backdrop-filter: blur(3px);
+        }
+
+        .player:hover {
+            border-color: #5ee7ff;
+            background: rgba(20,40,65,0.92);
+            transform: translate(-50%, -50%) scale(1.04);
+        }
+
+        .player.selected {
+            border: 3px solid #5ee7ff;
+            background: rgba(94,231,255,0.22);
+            box-shadow: 0 0 22px rgba(94,231,255,0.32);
+        }
+
+        .player-content {
+            line-height: 1.25;
+        }
+
+        .player-number {
+            display: block;
+            font-size: 11px;
+            color: #d9e2ef;
+            margin-bottom: 2px;
+        }
+
+        .player-name {
+            display: block;
+            font-size: 22px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .player-role {
+            display: block;
+            font-size: 11px;
+            color: #d9e2ef;
+            margin-top: 2px;
+        }
+
+        .role-panel {
+            background: #131c34;
+            border: 1px solid #283454;
+            border-radius: 14px;
+            padding: 25px;
+            min-height: 330px;
+        }
+
+        .role-panel h4 {
+            color: #5ee7ff;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .role-panel p {
+            color: #c7d0df;
+            margin-bottom: 15px;
+        }
+
+        .role-panel ul {
+            margin-left: 20px;
+            color: #c7d0df;
+        }
+
+        .role-panel li {
+            margin-bottom: 6px;
+        }
+
+        .rotation-status {
+            text-align: center;
+            margin-top: 15px;
+            color: #c7d0df;
+            font-weight: bold;
+        }
+
+        .movement-box {
+            margin-top: 25px;
+            background: #182642;
+            border-left: 5px solid #5ee7ff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .movement-box h4 {
+            color: #5ee7ff;
+            margin-bottom: 8px;
+        }
+
+        .movement-box p {
+            color: #c7d0df;
+        }
+
+        .trainer-help {
+            text-align: center;
+            color: #9ca9c2;
+            font-size: 14px;
+            margin-top: 14px;
+        }
+
+        .trainer-disclaimer {
+            margin-top: 18px;
+            color: #9ca9c2;
+            font-size: 13px;
+            text-align: center;
+        }
+
         /* MOBILE */
         @media (max-width: 700px) {
             nav {
@@ -230,6 +511,34 @@
 
             section {
                 padding: 60px 5%;
+            }
+
+
+            .trainer-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .trainer-court {
+                height: 390px;
+            }
+
+            .player {
+                min-width: 82px;
+                width: 30%;
+                height: 70px;
+            }
+
+            .player-name {
+                font-size: 17px;
+            }
+
+            .player-role,
+            .player-number {
+                font-size: 9px;
+            }
+
+            .role-panel {
+                min-height: auto;
             }
 
             .court {
@@ -379,6 +688,95 @@
             Players only need to be in the correct rotational order
             when the serve is contacted. After the serve, players can
             move into their normal positions.
+        </div>
+
+
+        <!-- INTERACTIVE 5-1 ROTATION TRAINER -->
+
+        <div class="five-one">
+
+            <h3>🏐 Learn the 5–1 Rotation</h3>
+
+            <p class="five-one-intro">
+                A 5–1 system uses one setter and five other players who rotate
+                through all six zones. Pick a rotation, then use the buttons to
+                see the starting formation, serve receive movement and the
+                team's movement after the serve.
+            </p>
+
+            <div class="rotation-buttons">
+                <button class="rotation-btn active" data-rotation="1">Rotation 1</button>
+                <button class="rotation-btn" data-rotation="2">Rotation 2</button>
+                <button class="rotation-btn" data-rotation="3">Rotation 3</button>
+                <button class="rotation-btn" data-rotation="4">Rotation 4</button>
+                <button class="rotation-btn" data-rotation="5">Rotation 5</button>
+                <button class="rotation-btn" data-rotation="6">Rotation 6</button>
+            </div>
+
+            <div class="phase-buttons">
+                <button id="serveBtn" class="active">📍 Starting Rotation</button>
+                <button id="receiveBtn">🛡️ Serve Receive</button>
+                <button id="afterServeBtn">⚡ After Serve</button>
+            </div>
+
+            <div class="trainer-layout">
+
+                <div class="trainer-court-wrap">
+                    <div class="trainer-court" id="trainerCourt">
+
+                        <div class="trainer-net"></div>
+
+                        <span class="court-label front-label">FRONT ROW</span>
+                        <span class="court-label back-label">BACK ROW</span>
+
+                    </div>
+
+                    <div class="rotation-status" id="rotationStatus">
+                        Rotation 1 — Starting Rotation
+                    </div>
+
+                    <p class="trainer-help">
+                        Click any player to see exactly what that position is responsible for.
+                    </p>
+                </div>
+
+                <div class="role-panel">
+
+                    <h4 id="roleTitle">Select a player</h4>
+
+                    <p id="roleDescription">
+                        Click a player on the court to learn their role in the 5–1.
+                    </p>
+
+                    <ul id="roleList">
+                        <li>See the player's position</li>
+                        <li>Learn their main responsibilities</li>
+                        <li>See where they move after the serve</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="movement-box">
+
+                <h4 id="movementTitle">
+                    Rotation 1 — Setter in Zone 1
+                </h4>
+
+                <p id="movementText">
+                    The setter starts in right back. The team must keep the
+                    correct rotational order until the serve is contacted.
+                    After that, players can move toward their normal roles.
+                </p>
+
+            </div>
+
+            <p class="trainer-disclaimer">
+                The movement shown is a simplified teaching model. Serve-receive
+                systems can be adjusted to suit a team's players and tactics.
+            </p>
+
         </div>
 
     </div>
@@ -616,6 +1014,390 @@
     <p>Learn • Train • Improve</p>
 </footer>
 
+
+
+<script>
+/* ============================= */
+/* INTERACTIVE 5-1 TRAINER */
+/* ============================= */
+
+const trainerCourt = document.getElementById("trainerCourt");
+const rotationButtons = document.querySelectorAll(".rotation-btn");
+const serveBtn = document.getElementById("serveBtn");
+const receiveBtn = document.getElementById("receiveBtn");
+const afterServeBtn = document.getElementById("afterServeBtn");
+
+const rotationStatus = document.getElementById("rotationStatus");
+const roleTitle = document.getElementById("roleTitle");
+const roleDescription = document.getElementById("roleDescription");
+const roleList = document.getElementById("roleList");
+const movementTitle = document.getElementById("movementTitle");
+const movementText = document.getElementById("movementText");
+
+let currentRotation = 1;
+let currentPhase = "start";
+let selectedPlayer = null;
+
+/*
+    Zone order:
+    1 -> 6 -> 5 -> 4 -> 3 -> 2 -> 1
+
+    The players themselves keep their normal rotational order.
+    The animation then shows where each player can move after
+    the serve is contacted.
+*/
+
+const rotations = {
+    1: {4:"OPP", 3:"MB2", 2:"OH1", 5:"OH2", 6:"MB1", 1:"SET"},
+    2: {4:"OH2", 3:"OPP", 2:"MB2", 5:"MB1", 6:"SET", 1:"OH1"},
+    3: {4:"MB1", 3:"OH2", 2:"OPP", 5:"SET", 6:"OH1", 1:"MB2"},
+    4: {4:"SET", 3:"MB1", 2:"OH2", 5:"OH1", 6:"MB2", 1:"OPP"},
+    5: {4:"OH1", 3:"SET", 2:"MB1", 5:"MB2", 6:"OPP", 1:"OH2"},
+    6: {4:"MB2", 3:"OH1", 2:"SET", 5:"OPP", 6:"OH2", 1:"MB1"}
+};
+
+const positionNames = {
+    4:"LEFT FRONT",
+    3:"MIDDLE FRONT",
+    2:"RIGHT FRONT",
+    5:"LEFT BACK",
+    6:"MIDDLE BACK",
+    1:"RIGHT BACK"
+};
+
+const playerInfo = {
+    SET: {
+        name:"SETTER",
+        description:"The setter runs the offense and works to get to the setting position quickly.",
+        responsibilities:[
+            "Set the attackers",
+            "Communicate the offense",
+            "Block when front row",
+            "Defend when back row",
+            "Move toward the setting position after serve"
+        ]
+    },
+
+    OH1: {
+        name:"OUTSIDE HITTER 1",
+        description:"The outside hitter is a major left-side attacking option and is commonly involved in serve receive.",
+        responsibilities:[
+            "Attack from the left side",
+            "Pass in serve receive",
+            "Block the opponent's outside hitter",
+            "Defend in the back row",
+            "Cover teammates after attacks"
+        ]
+    },
+
+    OH2: {
+        name:"OUTSIDE HITTER 2",
+        description:"The second outside hitter gives the team another left-side attacking option and helps with passing and defence.",
+        responsibilities:[
+            "Attack from the left side",
+            "Pass in serve receive",
+            "Block at the net",
+            "Defend in the back row",
+            "Cover attacking teammates"
+        ]
+    },
+
+    MB1: {
+        name:"MIDDLE BLOCKER 1",
+        description:"The middle blocker focuses on reading the setter, blocking and attacking quick balls through the middle.",
+        responsibilities:[
+            "Block opposing attackers",
+            "Run quick attacks",
+            "Close blocks with outside hitters",
+            "Read the opposing setter",
+            "Defend when in the back row"
+        ]
+    },
+
+    MB2: {
+        name:"MIDDLE BLOCKER 2",
+        description:"The second middle blocker has the same core middle-blocking and quick-attack responsibilities.",
+        responsibilities:[
+            "Block the middle",
+            "Attack quick sets",
+            "Close blocks",
+            "Read the opposing setter",
+            "Defend when in the back row"
+        ]
+    },
+
+    OPP: {
+        name:"OPPOSITE",
+        description:"The opposite attacks from the right side and is an important blocker against the opponent's outside hitter.",
+        responsibilities:[
+            "Attack from the right side",
+            "Block the opponent's outside hitter",
+            "Defend the right side",
+            "Attack back-row balls when used",
+            "Help cover the court"
+        ]
+    }
+};
+
+/* Position shown during the three animation phases. */
+const zoneCoordinates = {
+    4:[16.7,25],
+    3:[50,25],
+    2:[83.3,25],
+    5:[16.7,75],
+    6:[50,75],
+    1:[83.3,75]
+};
+
+/*
+    Serve-receive is intentionally simplified:
+    - Setter moves toward the setting target.
+    - Outside hitters and the back-row players spread into
+      a passing shape.
+    - Front-row players stay out of the passing lanes where possible.
+*/
+function getReceivePosition(role, startingZone) {
+    const rotation = rotations[currentRotation];
+
+    const setterZone = Object.keys(rotation).find(
+        zone => rotation[zone] === "SET"
+    );
+
+    const backRowZones = [5, 6, 1];
+    const isBackRow = backRowZones.includes(Number(startingZone));
+
+    if (role === "SET") {
+        return [86, 61];
+    }
+
+    if (role === "OH1" || role === "OH2") {
+        const outsideZones = isBackRow
+            ? (Number(startingZone) === 5 ? [15,72] : [85,72])
+            : (role === "OH1" ? [15,25] : [85,25]);
+
+        return outsideZones;
+    }
+
+    if (role === "OPP") {
+        return isBackRow ? [85,85] : [85,25];
+    }
+
+    if (role === "MB1" || role === "MB2") {
+        return isBackRow ? [50,84] : [50,25];
+    }
+
+    return zoneCoordinates[startingZone];
+}
+
+/*
+    After the serve, players move into their normal 5–1 roles:
+    setter -> setting target
+    OH -> left-side attacking/defensive role
+    MB -> middle
+    OPP -> right side
+*/
+function getAfterServePosition(role, startingZone) {
+    if (role === "SET") {
+        return [82,50];
+    }
+
+    if (role === "OH1") {
+        return [17,27];
+    }
+
+    if (role === "OH2") {
+        return [17,73];
+    }
+
+    if (role === "MB1") {
+        return [50,27];
+    }
+
+    if (role === "MB2") {
+        return [50,27];
+    }
+
+    if (role === "OPP") {
+        return [83,27];
+    }
+
+    return zoneCoordinates[startingZone];
+}
+
+const phaseNames = {
+    start:"Starting Rotation",
+    receive:"Serve Receive",
+    after:"After Serve"
+};
+
+const rotationInfo = {
+    1:{
+        title:"Rotation 1 — Setter in Zone 1",
+        text:"The setter starts in right back. Once the serve is contacted, the setter moves toward the setting target near the net while the attackers transition into their roles."
+    },
+    2:{
+        title:"Rotation 2 — Setter in Zone 6",
+        text:"The setter starts in middle back. After the serve, the setter moves toward the setting area while the attackers transition around the court."
+    },
+    3:{
+        title:"Rotation 3 — Setter in Zone 5",
+        text:"The setter starts in left back. The team stays in rotational order until contact, then the setter moves toward the setting target."
+    },
+    4:{
+        title:"Rotation 4 — Setter in Zone 4",
+        text:"The setter is front row. The other front-row players provide attacking and blocking options while the setter prepares to run the offense."
+    },
+    5:{
+        title:"Rotation 5 — Setter in Zone 3",
+        text:"The setter starts in middle front. The outside and opposite players transition into their attacking and blocking responsibilities."
+    },
+    6:{
+        title:"Rotation 6 — Setter in Zone 2",
+        text:"The setter starts in right front. The setter is already near the setting area while the other players prepare for attack and defence."
+    }
+};
+
+function setPlayerPosition(player, role, zone) {
+    let position;
+
+    if (currentPhase === "start") {
+        position = zoneCoordinates[zone];
+    } else if (currentPhase === "receive") {
+        position = getReceivePosition(role, zone);
+    } else {
+        position = getAfterServePosition(role, zone);
+    }
+
+    player.style.setProperty("--x", position[0] + "%");
+    player.style.setProperty("--y", position[1] + "%");
+}
+
+function drawCourt() {
+    trainerCourt.querySelectorAll(".player").forEach(
+        player => player.remove()
+    );
+
+    const rotation = rotations[currentRotation];
+
+    Object.keys(rotation).forEach(zone => {
+        const role = rotation[zone];
+
+        const player = document.createElement("button");
+        player.type = "button";
+        player.className = "player";
+
+        if (selectedPlayer === role) {
+            player.classList.add("selected");
+        }
+
+        player.innerHTML = `
+            <span class="player-content">
+                <span class="player-number">ZONE ${zone}</span>
+                <span class="player-name">${role}</span>
+                <span class="player-role">${positionNames[zone]}</span>
+            </span>
+        `;
+
+        setPlayerPosition(player, role, Number(zone));
+
+        player.addEventListener("click", () => {
+            selectedPlayer = role;
+            showPlayerInfo(role, Number(zone));
+            drawCourt();
+        });
+
+        trainerCourt.appendChild(player);
+    });
+
+    rotationStatus.textContent =
+        `Rotation ${currentRotation} — ${phaseNames[currentPhase]}`;
+
+    movementTitle.textContent = rotationInfo[currentRotation].title;
+
+    if (currentPhase === "start") {
+        movementText.textContent =
+            rotationInfo[currentRotation].text;
+    } else if (currentPhase === "receive") {
+        movementText.textContent =
+            "Serve-receive movement: players spread into their passing responsibilities while keeping the correct order until the serve is contacted. The exact passing pattern can vary between teams.";
+    } else {
+        movementText.textContent =
+            "After the serve is contacted, players are free to move into their normal 5–1 jobs. The setter moves to the setting target, hitters transition to attack and blockers prepare at the net.";
+    }
+}
+
+function showPlayerInfo(role, position) {
+    const info = playerInfo[role];
+
+    roleTitle.textContent = `${info.name} — Zone ${position}`;
+    roleDescription.textContent = info.description;
+
+    roleList.innerHTML = "";
+
+    info.responsibilities.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        roleList.appendChild(li);
+    });
+}
+
+function resetSelectedPlayer() {
+    selectedPlayer = null;
+
+    roleTitle.textContent = "Select a player";
+    roleDescription.textContent =
+        "Click a player on the court to learn their role in the 5–1.";
+
+    roleList.innerHTML = `
+        <li>See the player's position</li>
+        <li>Learn their main responsibilities</li>
+        <li>See where they move after the serve</li>
+    `;
+}
+
+function updatePhaseButtons() {
+    serveBtn.classList.toggle("active", currentPhase === "start");
+    receiveBtn.classList.toggle("active", currentPhase === "receive");
+    afterServeBtn.classList.toggle("active", currentPhase === "after");
+}
+
+rotationButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        currentRotation = Number(button.dataset.rotation);
+        currentPhase = "start";
+
+        rotationButtons.forEach(btn =>
+            btn.classList.remove("active")
+        );
+
+        button.classList.add("active");
+
+        resetSelectedPlayer();
+        updatePhaseButtons();
+        drawCourt();
+    });
+});
+
+serveBtn.addEventListener("click", () => {
+    currentPhase = "start";
+    updatePhaseButtons();
+    drawCourt();
+});
+
+receiveBtn.addEventListener("click", () => {
+    currentPhase = "receive";
+    updatePhaseButtons();
+    drawCourt();
+});
+
+afterServeBtn.addEventListener("click", () => {
+    currentPhase = "after";
+    updatePhaseButtons();
+    drawCourt();
+});
+
+drawCourt();
+</script>
 
 </body>
 </html>
